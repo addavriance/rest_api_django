@@ -46,6 +46,8 @@ router.register(r'section', SectionsViewSet, basename='section')
 router.register(r'flat', FlatsViewSet, basename='flat')
 
 urlpatterns = [
+   path('swagger/', schema_view.with_ui('swagger', cache_timeout=0)),
+   path('redoc/', schema_view.with_ui('redoc', cache_timeout=0)),
    path('', include(router.urls)),
    path('flat/', bulk_update_flats, name='bulk-update-flats'),
    path('login/', login, name='login'),
